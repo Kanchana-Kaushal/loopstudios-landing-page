@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "motion/react";
 
 function NavBar() {
@@ -6,6 +6,11 @@ function NavBar() {
   function toggleMenu() {
     setIsMwnuShown((prev) => !prev);
   }
+
+  useEffect(() => {
+    document.body.classList.toggle("overflow-hidden");
+  }),
+    [isMenuShown];
 
   return (
     <nav className="flex items-center justify-between">
@@ -30,20 +35,22 @@ function NavBar() {
 
       <AnimatePresence>
         {isMenuShown && (
-          <motion.ul
-            className="bg-Black font-josefin absolute inset-0 flex flex-col justify-center space-y-4 p-8 text-2xl font-light text-white uppercase"
-            initial={{ x: -400 }}
+          <motion.div
+            className="bg-Black absolute inset-0 flex max-h-screen flex-col justify-center"
+            initial={{ x: "-100vw" }}
             animate={{ x: 0 }}
-            exit={{ x: -400 }}
+            exit={{ x: "-100vw" }}
             key={"menu"}
             transition={{ ease: "easeInOut" }}
           >
-            <li>About</li>
-            <li>Careers</li>
-            <li>Events</li>
-            <li>Products</li>
-            <li>Support</li>
-          </motion.ul>
+            <ul className="space-y-4 p-8 text-2xl font-light text-white uppercase">
+              <li>About</li>
+              <li>Careers</li>
+              <li>Events</li>
+              <li>Products</li>
+              <li>Support</li>
+            </ul>
+          </motion.div>
         )}
       </AnimatePresence>
     </nav>
