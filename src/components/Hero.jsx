@@ -2,7 +2,7 @@ import NavBar from "./NavBar";
 
 function Hero() {
   return (
-    <header className="bg-[url(/public/images/mobile/image-hero.jpg)] bg-cover p-6 md:bg-[url(/public/images/desktop/image-hero.jpg)] md:p-0">
+    <header className="bg-[url(/public/images/mobile/image-hero.jpg)] bg-cover p-6 md:bg-[url(/public/images/desktop/image-hero.jpg)]">
       <div className="mx-auto flex min-h-screen max-w-6xl flex-col">
         <NavBar />
 
