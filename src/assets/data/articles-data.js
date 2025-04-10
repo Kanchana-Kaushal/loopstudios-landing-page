@@ -1,43 +1,47 @@
 const articles = [
   {
     title: "Deep earth",
-    imgMobile: "/public/images/mobile/image-deep-earth.jpg",
-    imgDesktop: "/public/images/desktop/image-deep-earth.jpg",
+    imgMobile: "/loopstudios-landing-page/images/mobile/image-deep-earth.jpg",
+    imgDesktop: "/loopstudios-landing-page/images/desktop/image-deep-earth.jpg",
   },
   {
     title: "Night arcade",
-    imgMobile: "/public/images/mobile/image-night-arcade.jpg",
-    imgDesktop: "/public/images/desktop/image-night-arcade.jpg",
+    imgMobile: "/loopstudios-landing-page/images/mobile/image-night-arcade.jpg",
+    imgDesktop:
+      "/loopstudios-landing-page/images/desktop/image-night-arcade.jpg",
   },
   {
     title: "Soccer team VR",
-    imgMobile: "/public/images/mobile/image-soccer-team.jpg",
-    imgDesktop: "/public/images/desktop/image-soccer-team.jpg",
+    imgMobile: "/loopstudios-landing-page/images/mobile/image-soccer-team.jpg",
+    imgDesktop:
+      "/loopstudios-landing-page/images/desktop/image-soccer-team.jpg",
   },
   {
     title: "The grid",
-    imgMobile: "/public/images/mobile/image-grid.jpg",
-    imgDesktop: "/public/images/desktop/image-grid.jpg",
+    imgMobile: "/loopstudios-landing-page/images/mobile/image-grid.jpg",
+    imgDesktop: "/loopstudios-landing-page/images/desktop/image-grid.jpg",
   },
   {
     title: "From up above VR",
-    imgMobile: "/public/images/mobile/image-from-above.jpg",
-    imgDesktop: "/public/images/desktop/image-from-above.jpg",
+    imgMobile: "/loopstudios-landing-page/images/mobile/image-from-above.jpg",
+    imgDesktop: "/loopstudios-landing-page/images/desktop/image-from-above.jpg",
   },
   {
     title: "Pocket borealis",
-    imgMobile: "/public/images/mobile/image-pocket-borealis.jpg",
-    imgDesktop: "/public/images/desktop/image-pocket-borealis.jpg",
+    imgMobile:
+      "/loopstudios-landing-page/images/mobile/image-pocket-borealis.jpg",
+    imgDesktop:
+      "/loopstudios-landing-page/images/desktop/image-pocket-borealis.jpg",
   },
   {
     title: "The curiosity",
-    imgMobile: "/public/images/mobile/image-curiosity.jpg",
-    imgDesktop: "/public/images/desktop/image-curiosity.jpg",
+    imgMobile: "/loopstudios-landing-page/images/mobile/image-curiosity.jpg",
+    imgDesktop: "/loopstudios-landing-page/images/desktop/image-curiosity.jpg",
   },
   {
     title: "Make it fisheye",
-    imgMobile: "/public/images/mobile/image-fisheye.jpg",
-    imgDesktop: "/public/images/desktop/image-fisheye.jpg",
+    imgMobile: "/loopstudios-landing-page/images/mobile/image-fisheye.jpg",
+    imgDesktop: "/loopstudios-landing-page/images/desktop/image-fisheye.jpg",
   },
 ];
 

@@ -2,59 +2,62 @@ import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "motion/react";
 
 function NavBar() {
-  const [isMenuShown, setIsMwnuShown] = useState(false);
+  const [isMenuShown, setIsMenuShown] = useState(false);
+
   function toggleMenu() {
-    setIsMwnuShown((prev) => !prev);
+    setIsMenuShown((prev) => !prev);
   }
 
   useEffect(() => {
-    document.body.classList.toggle("overflow-hidden");
-  }),
-    [isMenuShown];
+    document.body.classList.toggle("overflow-hidden", isMenuShown);
+  }, [isMenuShown]);
 
   return (
-    <nav className="flex items-center justify-between md:mt-12">
+    <nav
+      className="flex items-center justify-between md:mt-12"
+      aria-label="Main navigation"
+    >
       <img
-        src="/public/images/logo.svg"
-        alt="loopstudios logo"
+        src="/loopstudios-landing-page/images/logo.svg"
+        alt="Loopstudios logo"
         className="z-50 w-40 md:w-50"
       />
 
       <div className="z-50">
-        <motion.img
-          src={
-            isMenuShown
-              ? "/public/images/icon-close.svg"
-              : "/public/images/icon-hamburger.svg"
-          }
-          alt="open-menu"
-          className="md:hidden"
+        <motion.button
           onClick={toggleMenu}
+          className="md:hidden"
+          aria-label={isMenuShown ? "Close menu" : "Open menu"}
+          aria-expanded={isMenuShown}
           animate={{ rotate: isMenuShown ? 180 : 0 }}
           transition={{ ease: "linear" }}
-        />
+        >
+          <img
+            src={
+              isMenuShown
+                ? "/loopstudios-landing-page/images/icon-close.svg"
+                : "/loopstudios-landing-page/images/icon-hamburger.svg"
+            }
+            alt=""
+            role="presentation"
+          />
+        </motion.button>
 
-        <ul className="hidden items-center gap-4 text-white md:flex">
-          <li className="group relative cursor-pointer">
-            About
-            <div className="absolute -bottom-4 left-1/2 my-2 h-0.5 w-8 -translate-x-1/2 bg-white opacity-0 transition-opacity duration-75 ease-in-out group-hover:opacity-100"></div>
-          </li>
-          <li className="group relative cursor-pointer">
-            Careers
-            <div className="absolute -bottom-4 left-1/2 my-2 h-0.5 w-8 -translate-x-1/2 bg-white opacity-0 transition-opacity duration-75 ease-in-out group-hover:opacity-100"></div>
-          </li>
-          <li className="group relative cursor-pointer">
-            Events
-            <div className="absolute -bottom-4 left-1/2 my-2 h-0.5 w-8 -translate-x-1/2 bg-white opacity-0 transition-opacity duration-75 ease-in-out group-hover:opacity-100"></div>
-          </li>
-          <li className="group relative cursor-pointer">
-            Products
-            <div className="absolute -bottom-4 left-1/2 my-2 h-0.5 w-8 -translate-x-1/2 bg-white opacity-0 transition-opacity duration-75 ease-in-out group-hover:opacity-100"></div>
-          </li>
-          <li className="group relative cursor-pointer">
-            Support
-            <div className="absolute -bottom-4 left-1/2 my-2 h-0.5 w-8 -translate-x-1/2 bg-white opacity-0 transition-opacity duration-75 ease-in-out group-hover:opacity-100"></div>
-          </li>
+        <ul
+          className="hidden items-center gap-4 text-white md:flex"
+          role="menubar"
+        >
+          {["About", "Careers", "Events", "Products", "Support"].map((item) => (
+            <li
+              key={item}
+              className="group relative cursor-pointer"
+              role="menuitem"
+              tabIndex={0}
+            >
+              {item}
+              <div className="absolute -bottom-4 left-1/2 my-2 h-0.5 w-8 -translate-x-1/2 bg-white opacity-0 transition-opacity duration-75 ease-in-out group-hover:opacity-100"></div>
+            </li>
+          ))}
         </ul>
       </div>
 
@@ -65,15 +68,22 @@ function NavBar() {
             initial={{ x: "-100vw" }}
             animate={{ x: 0 }}
             exit={{ x: "-100vw" }}
-            key={"menu"}
+            key="menu"
             transition={{ ease: "easeInOut" }}
+            role="dialog"
+            aria-modal="true"
           >
-            <ul className="space-y-4 p-8 text-2xl font-light text-white uppercase">
-              <li>About</li>
-              <li>Careers</li>
-              <li>Events</li>
-              <li>Products</li>
-              <li>Support</li>
+            <ul
+              className="space-y-4 p-8 text-2xl font-light text-white uppercase"
+              role="menu"
+            >
+              {["About", "Careers", "Events", "Products", "Support"].map(
+                (item) => (
+                  <li key={item} role="menuitem" tabIndex={0}>
+                    {item}
+                  </li>
+                ),
+              )}
             </ul>
           </motion.div>
         )}

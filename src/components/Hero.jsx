@@ -2,7 +2,11 @@ import NavBar from "./NavBar";
 
 function Hero() {
   return (
-    <header className="bg-[url(/public/images/mobile/image-hero.jpg)] bg-cover p-6 md:bg-[url(/public/images/desktop/image-hero.jpg)]">
+    <header
+      className="bg-[url(/loopstudios-landing-page/images/mobile/image-hero.jpg)] bg-cover p-6 md:bg-[url(/loopstudios-landing-page/images/desktop/image-hero.jpg)]"
+      role="banner"
+      aria-label="Hero section with site title and navigation"
+    >
       <div className="mx-auto flex min-h-screen max-w-6xl flex-col">
         <NavBar />
 
